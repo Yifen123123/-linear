@@ -1,0 +1,214 @@
+\documentclass
+[answers]
+{exam}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin = 2cm]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{tasks}
+\usepackage{paralist}
+\usepackage{mathrsfs}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\everymath{\displaystyle}
+\usepackage{xeCJK}   % Chinese input settings
+\setCJKmainfont{標楷體} % Windows使用者請使用這行
+
+\begin{document}
+\begin{questions}
+\question State the $dimension\;theorem.$
+\begin{solution}
+\begin{flalign*}
+  <1>&V,W : V.S\\
+  &T:V \rightarrow W\ be\ linear\\
+  &V \;is\; a\; finite-dimensional\\
+  &dim(V)=nullity(T)+rank(T)&
+\end{flalign*}
+\end{solution}
+
+
+\question 
+Show that if $T:V \rightarrow V$ is a linear transformation, and $V$ is finite dimensional vector space, then $T$ is $1-1$ if and only if $T$ is onto.
+\begin{solution}
+\begin{flalign*}
+  <1>&(\rightarrow) \because one\ to\ one\\
+  &\therefore nullity=0, By\ dimension\ theroem\\
+  &dim(V)=rank(T)+nullity(T)\\
+  &dim(V)=rank(T)+0=rank(T)\\
+  &Then\ T: V \rightarrow V\\
+  &dim(V)=dim(V)\\
+  &\therefore T\ is\ onto\\
+  &(\leftarrow)\because T\ is\ onto\\ 
+  &Then\ T: V \rightarrow V\\
+  &dim(V)=dim(V)\\
+  &Hence\ T\ is\ one\ to\ one&
+\end{flalign*}  
+\end{solution}
+
+\question
+For Exercises 2 through 6, prove that T is a linear transformation, and find bases for both N(T) and R(T). Then compute the nullity and rank of T, and verity the dimension theorem. Finally, use the appropriate theorems in this section to determine whether T is one-to-one or onto.
+
+4. $T: M_{2\times2}(F)\rightarrow M_{2\times2}(F)$ defined by 
+\[
+T\begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+\end{pmatrix} 
+= 
+\begin{pmatrix}
+  2a_{11}-a_{12} & a_{13}+2a_{12} \\
+  0 & 0 \\
+\end{pmatrix}
+\]
+
+\begin{solution}
+\begin{flalign*}
+  <1>&proof:\\
+  &\text{1. T is linear}\\
+  &\text{2. bases for N(T), R(T)}\\
+  &\text{3. nullity(T), rank(T)}\\
+  &\text{4. dimension theorem}\\
+  &\text{5. T is one-to-one or onto}\\
+  &1.\\
+  &\text{(1) 
+  $T(0)=T\begin{pmatrix}
+  0 & 0 & 0 \\
+  0 & 0 & 0 \\
+  \end{pmatrix}
+  =\begin{pmatrix}
+  0 & 0 \\
+  0 & 0 \\
+  \end{pmatrix}$}\\
+  &\text{(2) Given $x=\begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  \end{pmatrix}$, $y=\begin{pmatrix}
+  b_{11} & b_{12} & b_{13} \\
+  b_{21} & b_{22} & b_{23} \\
+  \end{pmatrix}$}\\
+  &\text{$T(cx+y)=T
+  \left(
+  \begin{pmatrix}
+  ca_{11} & ca_{12} & ca_{13} \\
+  ca_{21} & ca_{22} & ca_{23} \\
+  \end{pmatrix}+
+  \begin{pmatrix}
+  b_{11} & b_{12} & b_{13} \\
+  b_{21} & b_{22} & b_{23} \\
+  \end{pmatrix}
+  \right)$}\\
+  &\text{$=T\begin{pmatrix}
+  ca_{11}+b_{11} & ca_{12}+b_{12} & ca_{13}+b_{13} \\
+  ca_{21}+b_{21} & ca_{22}+b_{22} & ca_{23}+b_{23} \\
+  \end{pmatrix}$}\\
+  &\text{$=\begin{pmatrix}
+  2(ca_{11}+b_{11})-(ca_{12}+b_{12}) & ca_{13}+b_{13})+2(ca_{12}+b_{12}) \\
+  0 & 0 \\
+  \end{pmatrix}$}\\
+  &\text{$=\left(
+  \begin{pmatrix}
+  c(2a_{11}-a_{12}) & c(a_{13}+2a_{12}) \\
+  0 & 0 \\
+  \end{pmatrix}+
+  \begin{pmatrix}
+  2b_{11}-b_{12}) & b_{13}+2b_{12} \\
+  0 & 0 \\
+  \end{pmatrix}
+  \right)$}\\
+  &\text{$=cT(x)+T(y)$}\\
+  &2.\\
+  &\text{$(1) T(x)=0
+  \Rightarrow
+  \begin{cases}
+	2a_{11} - a_{12}=0 \\
+	a_{13} + 2a_{12}=0\\  
+  \end{cases}
+  \Rightarrow
+  \begin{cases}
+	2a_{11}=a_{12} \\
+	a_{13}=-2a_{12}=-4a_{11}\\  
+  \end{cases}$}\\
+  &\text{$\Rightarrow N(T)=
+  \left\{
+  \begin{pmatrix}
+  a_{11} & 2a_{11} & -4a_{11}\\
+  a_{21} & a_{22} & a_{23} \\
+  \end{pmatrix} \mid a\in F \right\}$}\\
+  &\text{$\Rightarrow$ basis for N(T) :$
+  \left\{
+  \begin{pmatrix}
+  1 & 2 & -4\\
+  0 & 0 & 0 \\
+  \end{pmatrix},
+  \begin{pmatrix}
+  0 & 0 & 0\\
+  1 & 0 & 0 \\
+  \end{pmatrix},
+  \begin{pmatrix}
+  0 & 0 & 0\\
+  0 & 1 & 0 \\
+  \end{pmatrix}
+  \begin{pmatrix}
+  0 & 0 & 0\\
+  0 & 0 & 1 \\
+  \end{pmatrix}
+  \right\}$}\\
+  &\text{(2) basis for R(T) :
+  $\left\{
+  \begin{pmatrix}
+  1 & 0 \\
+  0 & 0 \\
+  \end{pmatrix},
+  \begin{pmatrix}
+  0 & 1 \\
+  0 & 0 \\
+  \end{pmatrix}
+  \right\}$}\\
+  &3.\\
+  &\text{$nullity(T)=4$}\\
+  &\text{$rank(T)=2$}\\
+  &4.\\
+  &\text{$dimension\ theroem$}\\
+  &\text{dim(V)=rank(T)+nullity(T)}\\
+  &\text{$\therefore dim(M_{2\times3)}=nullity(T)+rank(T)$}\\
+  &\text{$\therefore 6=4+2$}\\
+  &5.\\
+  &\text{T is not 1-1 $\because 
+  N(T)=\left\{\begin{pmatrix}
+  a_{11} & 2a_{11} & -4a_{11}\\
+  a_{21} & a_{22} & a_{23} \\
+  \end{pmatrix} \mid a\in F \right\}$}\\
+  &\text{T is not onto $\because
+  R(T)= \left\{\begin{pmatrix}
+  x & y\\
+  0 & 0\\
+  \end{pmatrix}\mid  x,y\in F \right\}$}&
+\end{flalign*}  
+\end{solution}
+
+\question
+Let $V$ be a vector space, and let $T:V\rightarrow V$ be linear. Prove that $T^2 = T_0$ if and only if $R(T)\subseteq N(T)$
+
+\begin{solution}
+\begin{flalign*}
+ <1>&\text{$(\Rightarrow)$}\\
+ &\text{Suppose $T^2=T_0$}\\
+ &\text{$\forall  u\in R(T) ,\exists v\in V \ni $}\\
+ &\text{$Tv=u, 0=T^2 v=T(T(v))=T(u)$}\\
+ &\text{$\therefore u \in N(T)$}\\
+ &\text{$Thus\ R(T) \subseteq N(T)$}\\
+ &\text{$(\Leftarrow)$}\\
+ &\text{$Suppose\ R(T) \subseteq N(T)$}\\
+ &\text{$\forall\ v \in V, T(v) \in R(T)$}\\
+ &\text{$\Rightarrow T(v) \in N(T)$}\\
+ &\text{$Thus\ 0=T(T(v))=T^2 v$}\\
+ &\text{$\therefore T^2 = T_0$}&
+\end{flalign*}
+\end{solution}
+\end{questions}
+
+
+\end{document}
+
